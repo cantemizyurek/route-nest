@@ -18,6 +18,34 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  apps/test:
+    dependencies:
+      '@route-nest/express-adapter':
+        specifier: workspace:*
+        version: link:../../packages/express-adapter
+      express:
+        specifier: ^4.19.2
+        version: 4.19.2
+      route-nest:
+        specifier: workspace:*
+        version: link:../../packages/route-nest
+    devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@types/express':
+        specifier: ^4.17.21
+        version: 4.17.21
+      '@types/node':
+        specifier: latest
+        version: 20.14.8
+      tsup:
+        specifier: ^8.1.0
+        version: 8.1.0(postcss@8.4.31)(ts-node@10.9.1(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+      typescript:
+        specifier: latest
+        version: 5.5.2
+
   packages/eslint-config:
     devDependencies:
       '@typescript-eslint/eslint-plugin':
@@ -45,15 +73,15 @@ importers:
   packages/express-adapter:
     dependencies:
       express:
-        specifier: ^4.19.2
+        specifier: latest
         version: 4.19.2
+      route-nest:
+        specifier: workspace:*
+        version: link:../route-nest
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      '@route-nest/route-nest':
-        specifier: workspace:*
-        version: link:../route-nest
       '@types/express':
         specifier: ^4.17.21
         version: 4.17.21
