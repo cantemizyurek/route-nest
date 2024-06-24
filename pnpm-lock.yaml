@@ -30,7 +30,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/route-nest
     devDependencies:
-      '@repo/typescript-config':
+      '@route-nest/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/express':
@@ -79,7 +79,7 @@ importers:
         specifier: workspace:*
         version: link:../route-nest
     devDependencies:
-      '@repo/typescript-config':
+      '@route-nest/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/express':
@@ -97,7 +97,7 @@ importers:
 
   packages/route-nest:
     devDependencies:
-      '@repo/typescript-config':
+      '@route-nest/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
