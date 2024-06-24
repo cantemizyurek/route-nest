@@ -1,81 +1,61 @@
-# Turborepo starter
+# Route Nest 🐉
 
-This is an official starter Turborepo.
+Route Nest offers a unique, directory-based routing solution for structuring and
+managing API routes. Designed for seamless integration with popular frameworks
+like [Express](https://expressjs.com/) and [Hono](https://honojs.dev/), it
+enables developers to organize routes in a library-like folder structure. This
+approach simplifies the development process and enhances maintainability.
 
-## Using this example
+## 🌟 Features
 
-Run the following command:
+- **📁 Directory-Based Routing:** Organize your API endpoints using a
+  straightforward folder structure.
+- **📦 Full TypeScript Support:** Take advantage of strong typing for better
+  code quality and maintainability.
+- **🧰 Zero Dependencies:** Lightweight with no external dependencies, ensuring
+  fast and efficient operation.
+- **🪛 Highly Extensible:** Easily extend functionality with Adapters to support
+  additional frameworks.
 
-```sh
-npx create-turbo@latest
+## 📖 Usage
+
+To start using Route Nest, you need to import and initialize it within your
+project. Here’s a quick guide on how to set it up with Express:
+
+### Installation
+
+First, install the package and any necessary adapters:
+
+```bash
+npm install route-nest @route-nest/express
 ```
 
-## What's inside?
+### Basic Setup
 
-This Turborepo includes the following packages/apps:
+Import and initialize Route Nest along with your framework-specific adapter:
 
-### Apps and Packages
+```typescript
+import { initRouteNestTree } from 'route-nest'
+import { initExpress } from '@route-nest/express-adapter'
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+async function startServer() {
+  const app = initExpress(await initRouteNestTree('.'))
+  app.listen(3000, () => console.log('Server listening on port 3000'))
+}
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+startServer()
 ```
 
-### Develop
+This setup assumes you have a directory called `app` at your project root,
+containing your route files structured in a way that Route Nest can understand.
 
-To develop all apps and packages, run the following command:
+## 🤝 Contributing
 
-```
-cd my-turborepo
-pnpm dev
-```
+Contributions are always welcome! Whether it's adding new features, improving
+documentation, or reporting issues, please feel free to make a pull request or
+open an issue.
 
-### Remote Caching
+## 📄 License
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Route Nest is MIT licensed. For more information, please see the
+[LICENSE](LICENSE.md) file.
