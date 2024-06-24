@@ -1,4 +1,4 @@
-import { RouteTypes, TreeNode } from '@route-nest/route-nest/src/types'
+import { RouteTypes, TreeNode } from 'route-nest/src/types'
 import express from 'express'
 import { join } from 'node:path'
 

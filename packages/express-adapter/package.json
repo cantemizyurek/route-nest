@@ -17,6 +17,6 @@
   "types": "./dist/index.d.ts",
   "dependencies": {
     "express": "latest",
-    "@route-nest/route-nest": "workspace:*"
+    "route-nest": "workspace:*"
   }
 }

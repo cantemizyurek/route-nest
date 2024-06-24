@@ -1,5 +1,5 @@
 {
-  "name": "route-nest-repo",
+  "name": "route-nest",
   "private": true,
   "scripts": {
     "build": "turbo build",
