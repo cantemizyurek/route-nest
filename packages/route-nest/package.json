@@ -1,7 +1,7 @@
 {
   "name": "route-nest",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "build": "tsup src/index.ts --format cjs,esm --dts"
@@ -16,6 +16,11 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "license": "MIT",
+  "author": {
+    "email": "can@temizyurek.com",
+    "name": "Can Temizyurek",
+    "url": "https://can.temizyurek.com"
+  },
   "publishConfig": {
     "access": "public"
   }
