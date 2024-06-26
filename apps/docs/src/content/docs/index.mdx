@@ -1,9 +1,9 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Route Nest
+description: Route Nest offers a unique, directory-based routing solution for structuring and managing API routes. Designed for seamless integration with popular frameworks like Express and Hono, it enables developers to organize routes in a library-like folder structure. This approach simplifies the development process and enhances maintainability.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Directory-based routing for Backend Frameworks
   image:
     file: ../../assets/houston.webp
   actions:
@@ -11,26 +11,70 @@ hero:
       link: /guides/example/
       icon: right-arrow
       variant: primary
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: View on
+      link: https://github.com/cantemizyurek/route-nest
+      icon: github
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components'
 
-## Next steps
+## 🌟 Features
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="📁 Directory-Based Routing" icon="document">
+    Organize your API endpoints using a straightforward folder structure.
+  </Card>
+  <Card title="📦 Full TypeScript Support" icon="seti:typescript">
+    Take advantage of strong typing for better code quality and maintainability.
+  </Card>
+  <Card title="🧰 Zero Dependencies" icon="sun">
+    Lightweight with no external dependencies, ensuring fast and efficient
+    operation.
+  </Card>
+  <Card title="🪛 Highly Extensible" icon="puzzle">
+    Easily extend functionality with Adapters to support additional frameworks.
+  </Card>
 </CardGrid>
+
+## 📖 Usage
+
+To start using Route Nest, you need to import and initialize it within your
+project. Here’s a quick guide on how to set it up with Express:
+
+### Installation
+
+First, install the package and any necessary adapters:
+
+```bash
+npm install route-nest @route-nest/express
+```
+
+### Basic Setup
+
+Import and initialize Route Nest along with your framework-specific adapter:
+
+```typescript
+import { initRouteNestTree } from 'route-nest'
+import { initExpress } from '@route-nest/express-adapter'
+
+async function startServer() {
+  const app = initExpress(await initRouteNestTree('.'))
+  app.listen(3000, () => console.log('Server listening on port 3000'))
+}
+
+startServer()
+```
+
+This setup assumes you have a directory called `app` at your project root,
+containing your route files structured in a way that Route Nest can understand.
+
+## 🤝 Contributing
+
+Contributions are always welcome! Whether it's adding new features, improving
+documentation, or reporting issues, please feel free to make a pull request or
+open an issue.
+
+## 📄 License
+
+Route Nest is MIT licensed. For more information, please see the
+[LICENSE](LICENSE.md) file.
