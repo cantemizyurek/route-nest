@@ -1,0 +1,80 @@
+---
+title: Route Nest
+description: Route Nest offers a unique, directory-based routing solution for structuring and managing API routes. Designed for seamless integration with popular frameworks like Express and Hono, it enables developers to organize routes in a library-like folder structure. This approach simplifies the development process and enhances maintainability.
+template: splash
+hero:
+  tagline: Directory-based routing for Backend Frameworks
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Example Guide
+      link: /guides/example/
+      icon: right-arrow
+      variant: primary
+    - text: View on
+      link: https://github.com/cantemizyurek/route-nest
+      icon: github
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+## 🌟 Features
+
+<CardGrid stagger>
+  <Card title="📁 Directory-Based Routing" icon="document">
+    Organize your API endpoints using a straightforward folder structure.
+  </Card>
+  <Card title="📦 Full TypeScript Support" icon="seti:typescript">
+    Take advantage of strong typing for better code quality and maintainability.
+  </Card>
+  <Card title="🧰 Zero Dependencies" icon="sun">
+    Lightweight with no external dependencies, ensuring fast and efficient
+    operation.
+  </Card>
+  <Card title="🪛 Highly Extensible" icon="puzzle">
+    Easily extend functionality with Adapters to support additional frameworks.
+  </Card>
+</CardGrid>
+
+## 📖 Usage
+
+To start using Route Nest, you need to import and initialize it within your
+project. Here’s a quick guide on how to set it up with Express:
+
+### Installation
+
+First, install the package and any necessary adapters:
+
+```bash
+npm install route-nest @route-nest/express
+```
+
+### Basic Setup
+
+Import and initialize Route Nest along with your framework-specific adapter:
+
+```typescript
+import { initRouteNestTree } from 'route-nest'
+import { initExpress } from '@route-nest/express-adapter'
+
+async function startServer() {
+  const app = initExpress(await initRouteNestTree('.'))
+  app.listen(3000, () => console.log('Server listening on port 3000'))
+}
+
+startServer()
+```
+
+This setup assumes you have a directory called `app` at your project root,
+containing your route files structured in a way that Route Nest can understand.
+
+## 🤝 Contributing
+
+Contributions are always welcome! Whether it's adding new features, improving
+documentation, or reporting issues, please feel free to make a pull request or
+open an issue.
+
+## 📄 License
+
+Route Nest is MIT licensed. For more information, please see the
+[LICENSE](LICENSE.md) file.
